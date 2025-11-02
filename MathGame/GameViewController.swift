@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 class GameViewController: UIViewController {
-    
+    // inistialize values
     var rand1 = 0
     var rand2 = 0
     var isTimerRunning = Bool()
@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     var timer = Timer()
     var lives = 5
     var guess = ""
+    // inistialize sound file locations
     var correctSound: AVAudioPlayer?
     var wrongSound: AVAudioPlayer?
     let wrongSoundFile = "131657__bertrof__game-sound-wrong"
@@ -23,16 +24,16 @@ class GameViewController: UIViewController {
     let correctSoundFile = "654321__gronkjaer__correctch_new"
     let correctSoundType = "mp3"
 
-    
+    // outlets for labels, text fields, and buttons
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var equationLabel: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
-    
     @IBOutlet weak var checkAnswerButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
     
+    // function to play sound file to indicate user is correct
     func playCorrectSound() {
         guard let path = Bundle.main.path(forResource: correctSoundFile, ofType: correctSoundType) else {
             print ("Error: Sound file '\(correctSoundFile).\(correctSoundType)' not found in bundle.")
@@ -47,7 +48,7 @@ class GameViewController: UIViewController {
         }
             
     }
-    
+    // function to play sound file to indicate user is incorrect
     func playIncorrectSound() {
         guard let path = Bundle.main.path(forResource: wrongSoundFile, ofType: wrongSoundType) else {
             print ("Error: Sound file '\(wrongSoundFile).\(wrongSoundType)' not found in bundle.")
@@ -62,6 +63,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    // function to make time remaining decrease by 1, and when time remaining is less than 1, end the game
     @objc func countdown() {
     timeRemaining = timeRemaining - 1
         timerLabel.text = "Time: \(timeRemaining)"
@@ -71,6 +73,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    //function to run timer, which calls on the countdown function every second
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
         isTimerRunning = true
@@ -80,8 +83,10 @@ class GameViewController: UIViewController {
         }
             
     }
+    // button function to check if the user is correct
     @IBAction func checkAnswerAction(_ sender: Any) {
         guess = inputTextField.text!
+        // if user is correct, add 1 to the user's score and display "Correct!" in the feedback label, and clear the user's input text field
         if guess == String(GameData.answer){
             GameData.score += 1
             scoreLabel.text = "Score: \(GameData.score)"
@@ -89,14 +94,18 @@ class GameViewController: UIViewController {
             inputTextField.text = ""
             playCorrectSound()
             NewEquation()
+            // reset timer (set to 31 because when set to 30, would immediately countdown to 29)
             timeRemaining = 31
         } else {
+            // if user is incorrect, subtract 1 life from lives
             lives -= 1
             
+            // when user reaches 0 lives, end game.
             if lives == 0 {
                 playIncorrectSound()
                 GameOver()
             } else {
+            // if user is still above 0 lives, display feedback in feedback label and clear user's input text field.
                 feedbackLabel.text = "Wrong! Try again."
                 inputTextField.text = ""
                 playIncorrectSound()
@@ -105,7 +114,9 @@ class GameViewController: UIViewController {
         }
     }
     @IBAction func homeScreenAction(_ sender: Any) {
+        MusicManager.playButtonSelectSound()
     }
+    // when new game button is pressed, reset all user variables, and create new equation.
     @IBAction func newGameAction(_ sender: Any) {
         lives = 5
         livesLabel.text = "Lives: \(lives)"
@@ -117,6 +128,7 @@ class GameViewController: UIViewController {
         inputTextField.text = ""
     }
     
+    // function to end game, disabling the check answer button and moving user to the game over view controller
     func GameOver(){
         feedbackLabel.text = "Game Over! Your score is \(GameData.score)"
         checkAnswerButton.isEnabled = false
@@ -124,6 +136,7 @@ class GameViewController: UIViewController {
         performSegue(withIdentifier: "showGameOverVC", sender: self)
         
     }
+    //function to create a new equation
     func NewEquation(){
         //generate random numbers for the equation between 1 and 20
         rand1 = Int.random(in: 1...20)
@@ -133,6 +146,7 @@ class GameViewController: UIViewController {
         // display equation in equationLabel
         equationLabel.text = "\(rand1) x \(rand2)"
     }
+    // when the view appears, call on NewEquation function and run timer.
     override func viewDidAppear(_ animated: Bool) {
         NewEquation()
         runTimer()

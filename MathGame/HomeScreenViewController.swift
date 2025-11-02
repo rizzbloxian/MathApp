@@ -12,7 +12,7 @@ class HomeScreenViewController: UIViewController {
     
     
     
-    
+    // play button press feedback sounds on press of buttons
     @IBAction func startAction(_ sender: Any) {
         MusicManager.playButtonSelectSound()
     }
@@ -21,9 +21,13 @@ class HomeScreenViewController: UIViewController {
         MusicManager.playButtonSelectSound()
     }
     
+    // mute buttons
     @IBAction func toggleMusicAction(_ sender: Any) {
+        MusicManager.playButtonSelectSound()
         MusicManager.toggleMute()
+        
     }
+    // play background music when the view loads.
     override func viewDidLoad() {
         MusicManager.playBackgroundSound()
         super.viewDidLoad()

@@ -7,6 +7,8 @@
 
 import AVFoundation
 class MusicManager {
+    
+    // inistializing sound file names and extensions
     static var buttonSelectSound: AVAudioPlayer?
     static var backgroundSound: AVAudioPlayer?
     static var isMuted: Bool = false
@@ -14,6 +16,8 @@ class MusicManager {
     static let backgroundSoundType = "mp3"
     static let buttonSelectSoundFile = "gameSelectSound"
     static let buttonSelectSoundType = "mp3"
+    
+    // creating universal function to play sound on button presses
     static func playButtonSelectSound() {
         guard let path = Bundle.main.path(forResource: buttonSelectSoundFile, ofType: buttonSelectSoundType) else {
             print ("Error: Sound file '\(buttonSelectSoundFile).\(buttonSelectSoundType)' not found in bundle.")
@@ -27,21 +31,30 @@ class MusicManager {
             
         }
     }
+    
+    //creating universal function to play background music
     static func playBackgroundSound() {
         guard let path = Bundle.main.path(forResource: backgroundSoundFile, ofType: backgroundSoundType) else {
+            // print error if sound file is not found
             print ("Error: Sound file '\(backgroundSoundFile).\(backgroundSoundType)' not found in bundle.")
             return
         }
+        // creating URL to point to location of sound file
         let url = URL(fileURLWithPath: path)
         do {
             backgroundSound = try AVAudioPlayer(contentsOf: url)
+            // set amount of loops to -1 to loop audio infinitely
             backgroundSound?.numberOfLoops = -1
-            backgroundSound?.volume = 0.1
+            // adjusting volume of background music to ensure button sounds can still be heard
+            backgroundSound?.volume = 0.2
             backgroundSound?.play()
             
+            
             if !isMuted {
+                // if the music is not muted, play the background music
                 backgroundSound?.play()
             } else
+                // if the music is muted, stop playing
                 {backgroundSound?.stop()}
         } catch {
             // file not loaded

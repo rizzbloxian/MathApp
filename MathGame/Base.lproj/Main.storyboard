@@ -267,10 +267,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gameOverBackground" translatesAutoresizingMaskIntoConstraints="NO" id="IS0-m5-VkG">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BM8-L9-aP4">
                                 <rect key="frame" x="32" y="69" width="109" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Tiny5-Regular" family="Tiny5" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -303,10 +307,6 @@
                                     <outlet property="dataSource" destination="NDn-VD-jX1" id="A3r-7y-n0u"/>
                                 </connections>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Untitled design (2)" translatesAutoresizingMaskIntoConstraints="NO" id="IS0-m5-VkG">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PxZ-7L-dH6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -322,12 +322,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GiG-oW-7ZT"/>
-        <segue reference="XPP-eL-gPq"/>
+        <segue reference="L5P-ZP-b4J"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Screenshot 2025-10-31 at 9.19.12 AM" width="256" height="248"/>
         <image name="Screenshot 2025-11-01 at 2.04.34 PM" width="230" height="66"/>
-        <image name="Untitled design (2)" width="1080" height="1920"/>
         <image name="gameBackGround" width="1080" height="1920"/>
         <image name="gameOverBackground" width="1080" height="1920"/>
         <image name="homeScreenBackground" width="1080" height="1920"/>

@@ -121,6 +121,7 @@ class GameViewController: UIViewController {
         }
     }
     @IBAction func homeScreenAction(_ sender: Any) {
+        GameData.score = 0
         MusicManager.playButtonSelectSound()
     }
     // when new game button is pressed, reset all user variables, and create new equation.

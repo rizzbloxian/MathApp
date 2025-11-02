@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "lives: 5"; ObjectID = "1Qz-RH-9vb"; */
+"1Qz-RH-9vb.text" = "lives: 5";
+
+/* Class = "UIButton"; configuration.title = "New Game"; ObjectID = "5vS-BD-jOZ"; */
+"5vS-BD-jOZ.configuration.title" = "New Game";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5vS-BD-jOZ"; */
+"5vS-BD-jOZ.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AsM-ub-Zai"; */
+"AsM-ub-Zai.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Recent scores"; ObjectID = "BM8-L9-aP4"; */
+"BM8-L9-aP4.text" = "Recent scores";
+
+/* Class = "UIButton"; configuration.title = "Home"; ObjectID = "FOd-cp-HSB"; */
+"FOd-cp-HSB.configuration.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "FOd-cp-HSB"; */
+"FOd-cp-HSB.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Enter answer here"; ObjectID = "GDs-gd-Pig"; */
+"GDs-gd-Pig.placeholder" = "Enter answer here";
+
+/* Class = "UIButton"; configuration.title = "New Game"; ObjectID = "HlX-gg-quo"; */
+"HlX-gg-quo.configuration.title" = "New Game";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HlX-gg-quo"; */
+"HlX-gg-quo.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Feedback"; ObjectID = "JNk-UI-gDQ"; */
+"JNk-UI-gDQ.text" = "Feedback";
+
+/* Class = "UIButton"; configuration.title = "Recent Scores"; ObjectID = "Nf2-iY-cIQ"; */
+"Nf2-iY-cIQ.configuration.title" = "Recent Scores";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Nf2-iY-cIQ"; */
+"Nf2-iY-cIQ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "MATH LEARNER"; ObjectID = "Pvb-eA-322"; */
+"Pvb-eA-322.text" = "MATH LEARNER";
+
+/* Class = "UILabel"; text = "Equation"; ObjectID = "T7h-Q7-bbc"; */
+"T7h-Q7-bbc.text" = "Equation";
+
+/* Class = "UIButton"; configuration.title = "Home"; ObjectID = "WTQ-UR-QIR"; */
+"WTQ-UR-QIR.configuration.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WTQ-UR-QIR"; */
+"WTQ-UR-QIR.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "GAME OVER"; ObjectID = "YCZ-ti-Z7S"; */
+"YCZ-ti-Z7S.text" = "GAME OVER";
+
+/* Class = "UIButton"; configuration.title = "Home"; ObjectID = "ehE-GK-Zv6"; */
+"ehE-GK-Zv6.configuration.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ehE-GK-Zv6"; */
+"ehE-GK-Zv6.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Your score was ?!"; ObjectID = "sGA-wb-P7x"; */
+"sGA-wb-P7x.text" = "Your score was ?!";
+
+/* Class = "UILabel"; text = "Score: 0"; ObjectID = "sV8-E0-Pyr"; */
+"sV8-E0-Pyr.text" = "Score: 0";
+
+/* Class = "UIButton"; configuration.title = "Check Answer"; ObjectID = "uV8-Oy-frx"; */
+"uV8-Oy-frx.configuration.title" = "Check Answer";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "uV8-Oy-frx"; */
+"uV8-Oy-frx.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "The Answer was:"; ObjectID = "wRK-Et-hfA"; */
+"wRK-Et-hfA.text" = "The Answer was:";

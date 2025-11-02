@@ -25,6 +25,8 @@ class GameViewController: UIViewController {
     let correctSoundType = "mp3"
 
     // outlets for labels, text fields, and buttons
+    
+    @IBOutlet weak var toggleMusicSwitch: UISwitch!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var livesLabel: UILabel!
@@ -32,6 +34,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var checkAnswerButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
+    
+    @IBAction func toggleMusicAction(_ sender: Any) {
+        MusicManager.playButtonSelectSound()
+        MusicManager.toggleMute()
+    }
     
     // function to play sound file to indicate user is correct
     func playCorrectSound() {
@@ -152,6 +159,8 @@ class GameViewController: UIViewController {
         runTimer()
     }
     override func viewDidLoad() {
+        toggleMusicSwitch.isOn = !MusicManager.isMuted
+        MusicManager.playBackgroundSound()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

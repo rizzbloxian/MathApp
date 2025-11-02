@@ -34,6 +34,9 @@ class MusicManager {
     
     //creating universal function to play background music
     static func playBackgroundSound() {
+        if backgroundSound != nil {
+            return
+        }
         guard let path = Bundle.main.path(forResource: backgroundSoundFile, ofType: backgroundSoundType) else {
             // print error if sound file is not found
             print ("Error: Sound file '\(backgroundSoundFile).\(backgroundSoundType)' not found in bundle.")

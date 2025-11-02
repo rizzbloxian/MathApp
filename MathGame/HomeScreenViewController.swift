@@ -21,7 +21,8 @@ class HomeScreenViewController: UIViewController {
         MusicManager.playButtonSelectSound()
     }
     
-    // mute buttons
+    @IBOutlet weak var toggleMusicSwitch: UISwitch!
+    // mute button
     @IBAction func toggleMusicAction(_ sender: Any) {
         MusicManager.playButtonSelectSound()
         MusicManager.toggleMute()
@@ -29,6 +30,7 @@ class HomeScreenViewController: UIViewController {
     }
     // play background music when the view loads.
     override func viewDidLoad() {
+        toggleMusicSwitch.isOn = !MusicManager.isMuted
         MusicManager.playBackgroundSound()
         super.viewDidLoad()
         // Do any additional setup after loading the view.

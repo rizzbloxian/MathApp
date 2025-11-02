@@ -81,6 +81,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Aqb-Le-UgU"/>
+                    <connections>
+                        <outlet property="toggleMusicSwitch" destination="QOl-Qx-ViB" id="Ddv-qA-b5N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,6 +167,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Gk-6T-7Yq">
                                 <rect key="frame" x="227" y="59" width="61" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleMusicAction:" destination="FAH-0d-oWH" eventType="valueChanged" id="S5o-sW-jAB"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PtD-Oc-Iuf">
                                 <rect key="frame" x="125" y="54" width="94" height="39"/>
@@ -191,6 +197,7 @@
                         <outlet property="livesLabel" destination="1Qz-RH-9vb" id="MbV-1B-l09"/>
                         <outlet property="scoreLabel" destination="sV8-E0-Pyr" id="Vcw-kq-MgF"/>
                         <outlet property="timerLabel" destination="6hg-oq-q45" id="pHJ-SE-Rjf"/>
+                        <outlet property="toggleMusicSwitch" destination="8Gk-6T-7Yq" id="acr-kf-UG9"/>
                         <segue destination="F2g-e9-B4A" kind="presentation" identifier="showGameOverVC" modalPresentationStyle="fullScreen" id="dar-To-nMs"/>
                     </connections>
                 </viewController>

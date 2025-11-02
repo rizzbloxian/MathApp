@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Screenshot 2025-11-01 at 2.04.34 PM" cornerStyle="small"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Screenshot 2025-11-01 at 2.04.34 PM" cornerStyle="small"/>
                                 <connections>
                                     <segue destination="NDn-VD-jX1" kind="presentation" modalPresentationStyle="fullScreen" id="yp7-1G-eLZ"/>
                                 </connections>
@@ -326,7 +326,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Screenshot 2025-10-31 at 9.19.12 AM" width="256" height="248"/>
-        <image name="Screenshot 2025-11-01 at 2.04.34 PM" width="230" height="66"/>
+        <image name="Screenshot 2025-11-01 at 2.04.34 PM" width="230" height="66"/>
         <image name="Untitled design (2)" width="1080" height="1920"/>
         <image name="gameBackGround" width="1080" height="1920"/>
         <image name="gameOverBackground" width="1080" height="1920"/>

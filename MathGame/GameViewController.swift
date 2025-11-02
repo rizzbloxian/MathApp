@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
     var guess = ""
     var correctSound: AVAudioPlayer?
     var wrongSound: AVAudioPlayer?
+    let wrongSoundFile = "131657__bertrof__game-sound-wrong"
+    let wrongSoundType = "wav"
 
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -30,13 +32,16 @@ class GameViewController: UIViewController {
     @IBOutlet weak var feedbackLabel: UILabel!
     
     func playIncorrectSound() {
-        let path = Bundle.main.path(forResource: "131657__bertrof__game-sound-wrong.wav", ofType: "nil")!
+        guard let path = Bundle.main.path(forResource: wrongSoundFile, ofType: wrongSoundType) else {
+            print ("Error: Sound file '\(wrongSoundFile).\(wrongSoundType)' not found in bundle.")
+            return
+        }
         let url = URL(fileURLWithPath: path)
         do {
             wrongSound = try AVAudioPlayer(contentsOf: url)
             wrongSound?.play()
         } catch {
-            // couldn't load file :(
+            // file not loaded
         }
     }
     

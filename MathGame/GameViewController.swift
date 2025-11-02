@@ -125,6 +125,7 @@ class GameViewController: UIViewController {
     }
     // when new game button is pressed, reset all user variables, and create new equation.
     @IBAction func newGameAction(_ sender: Any) {
+        MusicManager.playButtonSelectSound()
         lives = 5
         livesLabel.text = "Lives: \(lives)"
         GameData.score = 0

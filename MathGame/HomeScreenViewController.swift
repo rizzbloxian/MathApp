@@ -12,9 +12,15 @@ class HomeScreenViewController: UIViewController {
     
     
     
-
     
-
+    @IBAction func startAction(_ sender: Any) {
+        MusicManager.playButtonSelectSound()
+    }
+    
+    @IBAction func scoresAction(_ sender: Any) {
+        MusicManager.playButtonSelectSound()
+    }
+    
     @IBAction func toggleMusicAction(_ sender: Any) {
         MusicManager.toggleMute()
     }

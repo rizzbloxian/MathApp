@@ -6,16 +6,20 @@
 //
 
 import UIKit
-
+import AVFoundation
 class HomeScreenViewController: UIViewController {
+    
+    
+    
+    
 
     
-    @IBOutlet weak var startButton: UIButton!
-    // very nice comments about scaling with buttons. very sugoi. sugoi iratobashi
-    
 
-    
+    @IBAction func toggleMusicAction(_ sender: Any) {
+        MusicManager.toggleMute()
+    }
     override func viewDidLoad() {
+        MusicManager.playBackgroundSound()
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }

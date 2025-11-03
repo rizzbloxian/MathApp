@@ -142,6 +142,7 @@ class GameViewController: UIViewController {
         }
     }
     @IBAction func homeScreenAction(_ sender: Any) {
+        timer.invalidate()
         GameData.score = 0
         MusicManager.playButtonSelectSound()
     }
@@ -156,11 +157,12 @@ class GameViewController: UIViewController {
         checkAnswerButton.isEnabled = true
         feedbackLabel.text = ""
         inputTextField.text = ""
+        timeRemaining = 30
     }
     
     // function to end game, disabling the check answer button and moving user to the game over view controller
     func GameOver(){
-        isTimerRunning = false
+        timer.invalidate()
         playLosingSound()
         feedbackLabel.text = "Game Over! Your score is \(GameData.score)"
         checkAnswerButton.isEnabled = false

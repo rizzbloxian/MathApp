@@ -167,6 +167,7 @@ class GameViewController: UIViewController {
         feedbackLabel.text = "Game Over! Your score is \(GameData.score)"
         checkAnswerButton.isEnabled = false
         GameData.recentScores.insert(GameData.score, at: 0)
+        GameData.finalScore = GameData.score
         GameData.score = 0
         performSegue(withIdentifier: "showGameOverVC", sender: self)
         

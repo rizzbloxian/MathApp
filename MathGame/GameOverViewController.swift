@@ -15,7 +15,7 @@ class GameOverViewController: UIViewController {
     
     // when the view appears, display the user's score before losing, and show the answer to the equation they failed to solve.
     override func viewDidAppear(_ animated: Bool) {
-        scoreLabel.text = "Score: \(GameData.score)"
+        scoreLabel.text = "Score: \(GameData.finalScore)"
         answerLabel.text = "The Answer Was \(GameData.answer)"
     }
     

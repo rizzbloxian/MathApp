@@ -12,5 +12,5 @@ class GameData {
     static var recentScores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     static var score = 0
     static var answer = 0
-    
+    static var finalScore = 0
 }

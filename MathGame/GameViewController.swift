@@ -8,7 +8,9 @@
 import UIKit
 import AVFoundation
 class GameViewController: UIViewController {
+    
     // inistialize values
+    
     var rand1 = 0
     var rand2 = 0
     var isTimerRunning = Bool()
@@ -17,8 +19,11 @@ class GameViewController: UIViewController {
     var lives = 5
     var guess = ""
     // inistialize sound file locations
+    var losingSound: AVAudioPlayer?
     var correctSound: AVAudioPlayer?
     var wrongSound: AVAudioPlayer?
+    let losingSoundFile = "270329__littlerobotsoundfactory__jingle_lose_00"
+    let losingSoundType = "wav"
     let wrongSoundFile = "131657__bertrof__game-sound-wrong"
     let wrongSoundType = "wav"
     let correctSoundFile = "654321__gronkjaer__correctch_new"
@@ -35,11 +40,26 @@ class GameViewController: UIViewController {
     @IBOutlet weak var checkAnswerButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
     
+    
     @IBAction func toggleMusicAction(_ sender: Any) {
         MusicManager.playButtonSelectSound()
         MusicManager.toggleMute()
     }
     
+    // function to play losing sound file
+    func playLosingSound() {
+        guard let path = Bundle.main.path(forResource: losingSoundFile, ofType: losingSoundType) else {
+            print ("Error: Sound file '\(losingSoundFile).\(losingSoundType)' not found in bundle.")
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        do {
+            losingSound = try AVAudioPlayer(contentsOf: url)
+            losingSound?.play()
+        } catch {
+            // file not loaded
+        }
+    }
     // function to play sound file to indicate user is correct
     func playCorrectSound() {
         guard let path = Bundle.main.path(forResource: correctSoundFile, ofType: correctSoundType) else {
@@ -70,12 +90,13 @@ class GameViewController: UIViewController {
         }
     }
     
-    // function to make time remaining decrease by 1, and when time remaining is less than 1, end the game
+    // function to make time remaining decrease by 1, and when time remaining is equal to 0
     @objc func countdown() {
     timeRemaining = timeRemaining - 1
         timerLabel.text = "Time: \(timeRemaining)"
         
-        if timeRemaining < 1 {
+        if timeRemaining == 0 {
+            isTimerRunning = false
             GameOver()
         }
     }
@@ -139,9 +160,12 @@ class GameViewController: UIViewController {
     
     // function to end game, disabling the check answer button and moving user to the game over view controller
     func GameOver(){
+        isTimerRunning = false
+        playLosingSound()
         feedbackLabel.text = "Game Over! Your score is \(GameData.score)"
         checkAnswerButton.isEnabled = false
         GameData.recentScores.insert(GameData.score, at: 0)
+        GameData.score = 0
         performSegue(withIdentifier: "showGameOverVC", sender: self)
         
     }
